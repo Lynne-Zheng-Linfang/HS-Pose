@@ -1,0 +1,6 @@
+data/
+output/
+HS-Pose-env/
+*.npy
+*.pth
+*.pt
