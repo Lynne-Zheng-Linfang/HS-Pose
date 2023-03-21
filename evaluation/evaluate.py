@@ -50,7 +50,7 @@ def evaluate(argv):
     t_inference = 0.0
     img_count = 0
     pred_result_save_path = os.path.join(output_path, 'pred_result.pkl')
-    if os.path.exists(pred_result_save_path) and False:
+    if os.path.exists(pred_result_save_path):
         with open(pred_result_save_path, 'rb') as file:
             pred_results = pickle.load(file)
         img_count = 1
