@@ -88,7 +88,7 @@ Detailed configurations are in `config/config.py`.
 python -m evaluation.evaluate --dataset_dir YOUR_DATA_DIR --detection_dir DETECTION_DIR --resume 1 --resume_model MODEL_PATH --model_save SAVE_DIR
 ```
 
-## Example
+## Example Code
 You can run the following training and testing commands to get the results below.
 ```shell
 python -m engine.train --model_save output/models/HS-Pose/ --num_workers 20 --batch_size 16 --train_steps 1500 --seed 1677330429
