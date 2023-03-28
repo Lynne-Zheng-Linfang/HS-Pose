@@ -1,4 +1,3 @@
-# <span style="color:red">Warning: unfinished repositry! Please wait until this repositry finished!</span>
 
 # TODOs
 - [ ] Add paper link
