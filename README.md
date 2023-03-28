@@ -74,7 +74,7 @@ Specify the dataset directory and run the following command.
 python -m engine.train --dataset_dir YOUR_DATA_DIR --model_save SAVE_DIR
 ```
 
-Detailed configurations are in 'config/config.py'.
+Detailed configurations are in `config/config.py`.
 
 ## Evaluation
 ```shell
