@@ -9,7 +9,11 @@ Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-
 
 
 ![teaser](pic/teaser.png)
+<p style="text-align: center;"> Illstraction of the hybrid feature extraction.</p>
+
 ![pipeline](pic/pipeline.png)
+<p style="text-align: center;"> The overall framework.</p>
+
 
 ## UPDATE!
 
