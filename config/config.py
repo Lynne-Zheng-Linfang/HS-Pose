@@ -54,7 +54,7 @@ flags.DEFINE_integer("num_workers", 20, "cpu cores for loading dataset")
 flags.DEFINE_integer("seed", -1, "random seed for reproducibility")
 flags.DEFINE_integer('batch_size', 32, '')
 flags.DEFINE_integer('total_epoch', 150, 'total epoches in training')
-flags.DEFINE_integer('train_steps', 750, 'number of batches in each epoch')  # batchsize is 8, then 3000
+flags.DEFINE_integer('train_steps', 750, 'number of batches in each epoch')  # if batchsize is 8, then this should be 3000
 #####################space is not enough, trade time for space####################
 flags.DEFINE_integer('accumulate', 1, '')   # the real batch size is batchsize x accumulate
 
