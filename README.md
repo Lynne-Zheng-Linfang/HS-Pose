@@ -1,7 +1,7 @@
 
 # TODOs
 - [ ] Add paper link
-- [ ] Add citation
+- [ ] Add Bibtex
 
 # HS-Pose (CVPR 2023)
 Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-level Object Pose Estimation.
