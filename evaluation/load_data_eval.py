@@ -197,35 +197,6 @@ class PoseDataset(data.Dataset):
             return None
         num_instance = len(detection_dict['pred_class_ids'])
 
-        if FLAGS.use_noisy_data:
-            path = os.path.join(self.data_dir, 'nocs_Real_noisy_test_data', f'{scene}_{img_id}.pkl')
-            data = cPickle.load(open(path, 'rb'))[0]
-            obj_ids_0base = np.array(data['cat_id_0base']).astype(np.float32)
-            mean_shapes = np.array(data['mean_shape']).astype(np.float32)
-            sym_infos = np.array(data['sym_info']).astype(np.float32)
-            bboxes = np.array(data['bboxes']).astype(np.float32)
-            if FLAGS.noisy_level == 0.15:
-                noisy_level = 0.15000000000000002 
-            elif FLAGS.noisy_level == 0.3:
-                noisy_level = 0.30000000000000004
-            elif FLAGS.noisy_level == 0.35:
-                noisy_level = 0.35000000000000003 
-            else:
-                noisy_level = FLAGS.noisy_level 
-            pcl_in = []
-            for i in range(len(sym_infos)):
-                pcl_in.append(data['pcl_in'][i][noisy_level])
-            pcl_in = np.array(pcl_in)
-            data_dict = {}
-            data_dict['pcl_in'] = torch.as_tensor(pcl_in.astype(np.float32)).contiguous()
-            data_dict['cat_id_0base'] = torch.as_tensor(obj_ids_0base)
-            data_dict['sym_info'] = torch.as_tensor(sym_infos.astype(np.float32)).contiguous()
-            data_dict['mean_shape'] = torch.as_tensor(mean_shapes, dtype=torch.float32).contiguous()
-            detection_dict['pred_class_ids'] = (obj_ids_0base + 1).astype(int)
-            detection_dict['pred_bboxes'] = bboxes
-            detection_dict['pred_scores'] = np.ones(len(mean_shapes)).astype(np.float32)
-            return data_dict, detection_dict, gts
-
         sym_infos = []
         mean_shapes = []
         obj_ids = []

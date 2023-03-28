@@ -37,8 +37,7 @@ flags.DEFINE_integer('feat_face',768, 'input channel of the face recon')
 flags.DEFINE_integer('face_recon_c', 6 * 5, 'for every point, we predict its distance and normal to each face')
 #  the storage form is 6*3 normal, then the following 6 parametes distance, the last 6 parameters confidence
 flags.DEFINE_integer('gcn_sup_num', 7, 'support number for gcn')
-flags.DEFINE_integer('gcn_n_num', 10, 'neighbor number for gcn')
-# flags.DEFINE_bool('use_GG', False, 'attach gcn global information.')
+flags.DEFINE_integer('gcn_n_num', 20, 'neighbor number for RF-F and ORL')
 
 # point selection
 flags.DEFINE_integer('random_points', 1028, 'number of points selected randomly')
@@ -51,7 +50,7 @@ flags.DEFINE_string("train_stage", 'PoseNet_only', "for train stage")
 # flags.DEFINE_integer('eval', 0, '1 for eval mode')
 flags.DEFINE_string('device', 'cuda:0', '')
 # flags.DEFINE_string("train_gpu", '0', "gpu no. for training")
-flags.DEFINE_integer("num_workers", 32, "cpu cores for loading dataset")
+flags.DEFINE_integer("num_workers", 20, "cpu cores for loading dataset")
 flags.DEFINE_integer("seed", -1, "random seed for reproducibility")
 flags.DEFINE_integer('batch_size', 32, '')
 flags.DEFINE_integer('total_epoch', 150, 'total epoches in training')
@@ -122,10 +121,7 @@ flags.DEFINE_integer('resume_point', 0, 'the epoch to continue the training')
 
 
 ###################for evaluation#################
-flags.DEFINE_integer('eval_visualize_pcl', 0, 'save pcl when evaluation')
 flags.DEFINE_integer('eval_seed', -1, 'evaluation seed for reproducibility')
 flags.DEFINE_integer('eval_inference_only', 0, 'inference without evaluation')
-flags.DEFINE_bool('use_noisy_data', False, 'use noisy data for evaluation')
-flags.DEFINE_float('noisy_level', 0.0, 'inference without evaluation')
 
 

@@ -1,14 +1,12 @@
 # <span style="color:red">Warning: unfinished repositry! Please wait until this repositry finished!</span>
 
 # TODOs
-- [ ] Upload trained weights
 - [ ] Add paper link
 - [ ] Add citation
-- [ ] Add project page link
 
 # HS-Pose (CVPR 2023)
 Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-level Object Pose Estimation.
-([Paper](), [Project]())
+([Paper](), [Project](https://lynne-zheng-linfang.github.io/hspose.github.io/))
 
 
 ![teaser](pic/teaser.png)
@@ -59,33 +57,35 @@ chmod +x env_setup.sh
 ## Data Preparation
 To generate your own dataset, use the data preprocess code provided in this [git](https://github.com/mentian/object-deformnet/blob/master/preprocess/pose_data.py).
 Download the detection results in this [git](https://github.com/Gorilla-Lab-SCUT/DualPoseNet).
+Change the `dataset_dir` and `detection_dir` to your own path.
 
 
 ## Trained model
-Download the trained model from this [link]().
+Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). After downloading it, please extracted it and then put the HS-Pose-weights folder into the `output/models/` folder. Run the following command to check the results:
+```shell
+python -m evaluation.evaluate  --model_save output/models/HS-Pose_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_weights/model.pth --gcn_n_num 20 --eval_seed 1677483078
+```
 
 ## Training
 Please note, some details are changed from the original paper for more efficient training. 
 
 Specify the dataset directory and run the following command.
 ```shell
-python -m engine.train --data_dir YOUR_DATA_DIR --model_save SAVE_DIR
+python -m engine.train --dataset_dir YOUR_DATA_DIR --model_save SAVE_DIR
 ```
 
 Detailed configurations are in 'config/config.py'.
 
-
-
 ## Evaluation
 ```shell
-python -m evaluation.evaluate --data_dir YOUR_DATA_DIR --detection_dir DETECTION_DIR --resume 1 --resume_model MODEL_PATH --model_save SAVE_DIR
+python -m evaluation.evaluate --dataset_dir YOUR_DATA_DIR --detection_dir DETECTION_DIR --resume 1 --resume_model MODEL_PATH --model_save SAVE_DIR
 ```
 
 ## Example
 You can run the following training and testing commands to get the results below.
 ```shell
-python -m engine.train --model_save output/models/HS-Pose/ --num_workers 20 --gcn_n_num 20 --batch_size 16 --train_steps 1500 --seed 1677330429
-python -m evaluation.evaluate  --model_save output/models/HS-Pose/model_149 --resume 1 --resume_model ./output/models/HS-Pose/model_149.pth --resume_point 149  --gcn_n_num 20 --eval_seed 1677483078
+python -m engine.train --model_save output/models/HS-Pose/ --num_workers 20 --batch_size 16 --train_steps 1500 --seed 1677330429
+python -m evaluation.evaluate  --model_save output/models/HS-Pose/model_149 --resume 1 --resume_model ./output/models/HS-Pose/model_149.pth --eval_seed 1677483078
 ```
 |Metrics| IoU75 | IoU50 | IoU25 | 5d2cm | 5d5cm | 10d2cm| 10d5cm| 10d10cm|  5d   | 2cm   |
 |:------|:------|:------|:------|:------|:------|:------|:------|:-------|:------|:------|

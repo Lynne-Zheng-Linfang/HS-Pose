@@ -116,6 +116,7 @@ def evaluate(argv):
             else:
                 assert NotImplementedError
             pred_results.append(detection_dict)
+            torch.cuda.empty_cache()
         with open(pred_result_save_path, 'wb') as file:
             pickle.dump(pred_results, file)
         print('inference time:', t_inference / img_count)
