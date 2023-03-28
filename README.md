@@ -27,7 +27,7 @@ Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-
 - Python 3.8 
 - Pytorch 1.10.1
 - CUDA 11.2
-- RTX 3090
+- 1 * RTX 3090
  
 
 ## Virtual environment
