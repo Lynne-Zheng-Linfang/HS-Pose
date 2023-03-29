@@ -1,6 +1,6 @@
 
 # TODOs
-- [ ] Add Bibtex
+- [ ] Upload weights for CAMERA25 dataset
 
 # HS-Pose (CVPR 2023)
 Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-level Object Pose Estimation.
@@ -102,6 +102,17 @@ python -m evaluation.evaluate  --model_save output/models/HS-Pose/model_149 --re
 
 ## Citation
 Cite us if you found this work useful.
+```
+@misc{zheng2023hspose,
+      title={HS-Pose: Hybrid Scope Feature Extraction for Category-level Object Pose Estimation}, 
+      author={Linfang Zheng and Chen Wang and Yinghan Sun and Esha Dasgupta and Hua Chen and Ales Leonardis and Wei Zhang and Hyung Jin Chang},
+      year={2023},
+      eprint={2303.15743},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
 
 ## Acknowledgment
 Our implementation leverages the code from [3dgcn](https://github.com/j1a0m0e4sNTU/3dgcn), [FS-Net](https://github.com/DC1991/FS_Net),
