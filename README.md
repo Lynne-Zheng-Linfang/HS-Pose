@@ -93,7 +93,7 @@ You can run the following training and testing commands to get the results below
 python -m engine.train --model_save output/models/HS-Pose/ --num_workers 20 --batch_size 16 --train_steps 1500 --seed 1677330429
 python -m evaluation.evaluate  --model_save output/models/HS-Pose/model_149 --resume 1 --resume_model ./output/models/HS-Pose/model_149.pth --eval_seed 1677483078
 ```
-|Metrics| IoU75 | IoU50 | IoU25 | 5d2cm | 5d5cm | 10d2cm| 10d5cm| 10d10cm|  5d   | 2cm   |
+|Metrics| IoU25 | IoU50 | IoU75 | 5d2cm | 5d5cm | 10d2cm| 10d5cm| 10d10cm|  5d   | 2cm   |
 |:------|:------|:------|:------|:------|:------|:------|:------|:-------|:------|:------|
 |Scores | 84.3  | 82.8  | 75.3  |  46.2 |  56.1 | 68.9  | 84.1  | 85.2   | 59.1  | 77.8  |
 
