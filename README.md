@@ -1,7 +1,3 @@
-
-# TODOs
-- [ ] Upload weights for CAMERA25 dataset
-
 # HS-Pose (CVPR 2023)
 Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-level Object Pose Estimation.
 ([Paper](https://arxiv.org/abs/2303.15743), [Project](https://lynne-zheng-linfang.github.io/hspose.github.io/))
@@ -63,15 +59,23 @@ chmod +x env_setup.sh
 ## Data Preparation
 To generate your own dataset, use the data preprocess code provided in this [git](https://github.com/mentian/object-deformnet/blob/master/preprocess/pose_data.py). Download the detection results in this [git](https://github.com/Gorilla-Lab-SCUT/DualPoseNet). Change the `dataset_dir` and `detection_dir` to your own path.
 
-Since the handle visibility labels are not provided in the original NOCS REAL275 train set, please put the handle visibility file `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/`. The `mug_handle.pkl` is mannually labeled and originally provided by [GPV-Pose](https://github.com/lolrudy/GPV_Pose).
+Since the handle visibility labels are not provided in the original NOCS REAL275 train set, please put the handle visibility file `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/` folder. The `mug_handle.pkl` is mannually labeled and originally provided by the [GPV-Pose](https://github.com/lolrudy/GPV_Pose).
 
 
 ## Trained model
-Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). After downloading it, please extracted it and then put the HS-Pose-weights folder into the `output/models/` folder. 
+### REAL275
+Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). After downloading it, please extracted it and then put the `HS-Pose_weights` folder into the `output/models/` folder. 
 
-Run the following command to check the results:
+Run the following command to check the results for REAL275 dataset:
 ```shell
 python -m evaluation.evaluate  --model_save output/models/HS-Pose_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_weights/model.pth --eval_seed 1677483078
+```
+### CAMERA25
+Download the trained model from this [google link](https://drive.google.com/file/d/1_Dcy-VXcMABihusLDVV_axibFBW-JjJF/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1QNLPxJn86Gk-mxVHsjTlsQ) (code: 9et7). After downloading it, please extracted it and then put the `HS-Pose_CAMERA25_weights` folder into the `output/models/` folder. 
+
+Run the following command to check the results for CAMERA25 dataset:
+```shell
+python -m evaluation.evaluate  --model_save output/models/HS-Pose_CAMERA25_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_CAMERA25_weights/model.pth --eval_seed 1678917637 --dataset CAMERA
 ```
 
 ## Training
