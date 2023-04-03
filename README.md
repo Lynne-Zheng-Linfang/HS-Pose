@@ -34,7 +34,7 @@ Pytorch implementation of HS-Pose: Hybrid Scope Feature Extraction for Category-
 cd HS-Pose
 virtualenv HS-Pose-env -p /usr/bin/python3.8
 ```
-Then, copy past the following lines to the end of `/HS-Pose-env/bin/activate` file:
+Then, copy past the following lines to the end of `./HS-Pose-env/bin/activate` file:
 ```shell
 CUDAVER=cuda-11.2
 export PATH=/usr/local/$CUDAVER/bin:$PATH
