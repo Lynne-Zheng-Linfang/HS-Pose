@@ -61,9 +61,7 @@ chmod +x env_setup.sh
 <!-- - Install [Detectron2](https://github.com/facebookresearch/detectron2). -->
 
 ## Data Preparation
-To generate your own dataset, use the data preprocess code provided in this [git](https://github.com/mentian/object-deformnet/blob/master/preprocess/pose_data.py). Download the detection results in this [git](https://github.com/Gorilla-Lab-SCUT/DualPoseNet).
-
-Change the `dataset_dir` and `detection_dir` to your own path.
+To generate your own dataset, use the data preprocess code provided in this [git](https://github.com/mentian/object-deformnet/blob/master/preprocess/pose_data.py). Download the detection results in this [git](https://github.com/Gorilla-Lab-SCUT/DualPoseNet). Change the `dataset_dir` and `detection_dir` to your own path.
 
 Since the handle visibility labels are not provided in the original NOCS REAL275 train set, please put the handle visibility file `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/`. The `mug_handle.pkl` is mannually labeled and originally provided by [GPV-Pose](https://github.com/lolrudy/GPV_Pose).
 
