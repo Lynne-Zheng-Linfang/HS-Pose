@@ -61,13 +61,17 @@ chmod +x env_setup.sh
 <!-- - Install [Detectron2](https://github.com/facebookresearch/detectron2). -->
 
 ## Data Preparation
-To generate your own dataset, use the data preprocess code provided in this [git](https://github.com/mentian/object-deformnet/blob/master/preprocess/pose_data.py).
-Download the detection results in this [git](https://github.com/Gorilla-Lab-SCUT/DualPoseNet).
+To generate your own dataset, use the data preprocess code provided in this [git](https://github.com/mentian/object-deformnet/blob/master/preprocess/pose_data.py). Download the detection results in this [git](https://github.com/Gorilla-Lab-SCUT/DualPoseNet).
+
 Change the `dataset_dir` and `detection_dir` to your own path.
+
+Put the `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/`.
 
 
 ## Trained model
-Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). After downloading it, please extracted it and then put the HS-Pose-weights folder into the `output/models/` folder. Run the following command to check the results:
+Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). 
+
+After downloading it, please extracted it and then put the HS-Pose-weights folder into the `output/models/` folder. Run the following command to check the results:
 ```shell
 python -m evaluation.evaluate  --model_save output/models/HS-Pose_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_weights/model.pth --gcn_n_num 20 --eval_seed 1677483078
 ```
