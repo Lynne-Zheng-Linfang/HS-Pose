@@ -69,9 +69,9 @@ Put the `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/`.
 
 
 ## Trained model
-Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). 
+Download the trained model from this [google link](https://drive.google.com/file/d/1TszIS5ebECVpLyEbukOhb7QhVIwPeTIM/view?usp=sharing) or [baidu link](https://pan.baidu.com/s/1Y8Gb0azh7lWt8XEgfNY_cw) (code: w8pw). After downloading it, please extracted it and then put the HS-Pose-weights folder into the `output/models/` folder. 
 
-After downloading it, please extracted it and then put the HS-Pose-weights folder into the `output/models/` folder. Run the following command to check the results:
+Run the following command to check the results:
 ```shell
 python -m evaluation.evaluate  --model_save output/models/HS-Pose_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_weights/model.pth --gcn_n_num 20 --eval_seed 1677483078
 ```
