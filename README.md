@@ -65,7 +65,7 @@ To generate your own dataset, use the data preprocess code provided in this [git
 
 Change the `dataset_dir` and `detection_dir` to your own path.
 
-Put the `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/`.
+Since the handle visibility labels are not provided in the original NOCS train set, please put the handle visibility file `./mug_handle.pkl` under `YOUR_NOCS_DIR/Real/train/`. The `mug_handle.pkl` is mannually labeled and originally provided by [GPV-Pose](https://github.com/lolrudy/GPV_Pose).
 
 
 ## Trained model
