@@ -73,7 +73,7 @@ Download the trained model from this [google link](https://drive.google.com/file
 
 Run the following command to check the results:
 ```shell
-python -m evaluation.evaluate  --model_save output/models/HS-Pose_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_weights/model.pth --gcn_n_num 20 --eval_seed 1677483078
+python -m evaluation.evaluate  --model_save output/models/HS-Pose_weights/eval_result --resume 1 --resume_model ./output/models/HS-Pose_weights/model.pth --eval_seed 1677483078
 ```
 
 ## Training
