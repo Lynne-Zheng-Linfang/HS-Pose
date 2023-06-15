@@ -109,13 +109,13 @@ python -m evaluation.evaluate  --model_save output/models/HS-Pose/model_149 --re
 ## Citation
 Cite us if you found this work useful.
 ```
-@misc{zheng2023hspose,
-      title={HS-Pose: Hybrid Scope Feature Extraction for Category-level Object Pose Estimation}, 
-      author={Linfang Zheng and Chen Wang and Yinghan Sun and Esha Dasgupta and Hua Chen and Ales Leonardis and Wei Zhang and Hyung Jin Chang},
-      year={2023},
-      eprint={2303.15743},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Zheng_2023_CVPR,
+    author    = {Zheng, Linfang and Wang, Chen and Sun, Yinghan and Dasgupta, Esha and Chen, Hua and Leonardis, Ale\v{s} and Zhang, Wei and Chang, Hyung Jin},
+    title     = {HS-Pose: Hybrid Scope Feature Extraction for Category-Level Object Pose Estimation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {17163-17173}
 }
 ```
 
